@@ -1,13 +1,227 @@
+
+/* Global Styles */
 body {
+  font-family: "Outfit", serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  text-align: center;
 }
 
-code {
+/* Center all headings */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Search Bar */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.search-input { 
+  margin-right: 20px;
+  padding: 15px 20px;
+  width: 350px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-family: "Outfit", serif;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.2); /* Subtle transparent effect */
+  color: white;
+  box-shadow: inset 0 4px 6px rgba(255, 255, 255, 0.2), 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px); /* Soft glass effect */
+}
+
+/* Focus effect */
+.search-input:focus {
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3), 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Placeholder styling */
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+}
+
+
+/* General Button Styling */
+
+
+/* Primary Button */
+.button-primary {
+  background: linear-gradient(135deg, #ff9800, #ff5722);
+  color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+.button-primary:hover {
+  background: linear-gradient(135deg, #ff5722, #ff9800);
+  transform: scale(1.05);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Secondary Button */
+.button-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.button-secondary:hover {
+  background: white;
+  color: #ff5722;
+  transform: scale(1.05);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Disabled Button */
+.button-disabled {
+  background: grey;
+  cursor: not-allowed;
+  opacity: 0.5;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Small Button */
+.button-small {
+  
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Large Button */
+.button-large {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+/* Weather Card */
+.weather-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  margin-top: 20px;
+}
+
+.weather-icon {
+  width: 80px;
+  height: 80px;
+}
+
+/* Forecast */
+.forecast-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Toggle Button */
+.toggle-button {
+  margin-top: 15px;
+  padding: 8px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: #ff5722;
+  color: white;
+  font-family: "Outfit", serif;
+}
+.toggle-icon {
+  background: linear-gradient(135deg, #ff9800, #ff5722); /* Gradient orange-red */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Circular button */
+  width: 50px;
+  height: 50px;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.toggle-icon:hover {
+  background: linear-gradient(135deg, #ff5722, #d84315); /* Darker shade on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+
+.weather-box {
+  background: linear-gradient(135deg, #4A90E2, #1E3A8A); /* Beautiful blue gradient */
+  border-radius: 20px; /* Rounded edges */
+  padding: 20px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+  max-width: 400px;
+  margin: auto;
+  backdrop-filter: blur(10px); /* Glass effect */
+  margin-top: 20px;
+}
+
+/* Weather Icon Styling */
+.weather-box img {
+  width: 80px;
+  height: 80px;
+}
+
+/* Weather Text */
+.weather-box h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.weather-box p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+
+
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */

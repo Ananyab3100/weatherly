@@ -64,24 +64,31 @@ const Home = () => {
 
   return (
     <div className="container">
+
+     <div>
       <h1>Weather App</h1>
 
       {/* Search Input */}
-      <div>
+      <div  >
         <input
+        className="search-input"
           type="text"
           placeholder="Enter city name"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button onClick={handleSearch}>Search</button>
+        <button className="button button-primary" onClick={handleSearch}>Search</button>
+      </div>
       </div>
 
       {/* Toggle Celsius/Fahrenheit */}
       <div>
-        <button onClick={() => setUnit(unit === "C" ? "F" : "C")}>
-          Switch to {unit === "C" ? "Fahrenheit" : "Celsius"}
-        </button>
+      <button className="toggle-icon" onClick={() => setUnit(unit === "C" ? "F" : "C")}>
+  {unit === "C" ? "℉" : "℃"}
+</button>
+
+
+
       </div>
 
       {/* Weather Data */}
@@ -89,6 +96,7 @@ const Home = () => {
         <p>Loading weather data...</p>
       ) : weather ? (
         <div>
+            <div className="weather-box">
           <h2>
             {weather.location.name}, {weather.location.country}
           </h2>
@@ -96,16 +104,6 @@ const Home = () => {
           <p>{weather.current.condition.text}</p>
           <img src={weather.current.condition.icon} alt="weather-icon" />
 
-          {/* Hourly Forecast */}
-          <h3>Hourly Forecast</h3>
-          <div style={{ display: "flex", overflowX: "auto" }}>
-            {weather.forecast.forecastday[0].hour.map((hour, index) => (
-              <div key={index} style={{ margin: "10px", textAlign: "center" }}>
-                <p>{hour.time.split(" ")[1]}</p>
-                <p>{convertTemp(hour.temp_c)}°{unit}</p>
-                <img src={hour.condition.icon} alt="weather-icon" />
-              </div>
-            ))}
           </div>
 
           {/* 5-Day Forecast */}
@@ -120,6 +118,19 @@ const Home = () => {
               </div>
             ))}
           </div>
+
+          {/* Hourly Forecast */}
+          <h3>Hourly Forecast</h3>
+          <div style={{ display: "flex", overflowX: "auto" }}>
+            {weather.forecast.forecastday[0].hour.map((hour, index) => (
+              <div key={index} style={{ margin: "10px", textAlign: "center" }}>
+                <p>{hour.time.split(" ")[1]}</p>
+                <p>{convertTemp(hour.temp_c)}°{unit}</p>
+                <img src={hour.condition.icon} alt="weather-icon" />
+              </div>
+            ))}
+          </div>
+
         </div>
       ) : (
         <p>Weather data not available</p>

@@ -1,6 +1,6 @@
 /* Global Styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: "Outfit", serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(135deg, #00c6ff, #0072ff);
@@ -8,6 +8,12 @@ body {
   text-align: center;
 }
 
+/* Center all headings */
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+/* Container */
 .container {
   max-width: 800px;
   margin: auto;
@@ -27,6 +33,7 @@ body {
   border-radius: 20px;
   border: none;
   outline: none;
+  font-family: "Outfit", serif;
 }
 
 .search-button {
@@ -37,6 +44,7 @@ body {
   color: white;
   cursor: pointer;
   margin-left: 10px;
+  font-family: "Outfit", serif;
 }
 
 /* Weather Card */
@@ -77,4 +85,5 @@ body {
   cursor: pointer;
   background: #ff5722;
   color: white;
+  font-family: "Outfit", serif;
 }
